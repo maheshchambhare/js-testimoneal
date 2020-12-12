@@ -1,9 +1,84 @@
+ const Array = [ { 
+    id:01 , 
+    img: "images/Ellipse 2.png" , 
+    name : "Edvard" , job : "UI|UX designer" , 
+    text : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem repellat sunt fuga iste enim nam nostrum aliquid, saepe ipsum quasi."
+},
+{ 
+    id:02 , 
+    img: "images/Ellipse 3.png" , 
+    name : "Spider" , job : "Web Developer" , 
+    text : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem repellat sunt fuga iste enim nam nostrum aliquid, saepe ipsum quasi."
+},
+{ 
+    id:03 , 
+    img: "images/Ellipse 4.png" , 
+    name : "lufy" , job : "Softwear Engineer" , 
+    text : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem repellat sunt fuga iste enim nam nostrum aliquid, saepe ipsum quasi."
+},
+{ 
+    id:04 , 
+    img: "images/Ellipse 5.png" , 
+    name : "Superman" , job : "Product Designer" , 
+    text : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem repellat sunt fuga iste enim nam nostrum aliquid, saepe ipsum quasi."
+},
 
 
-const slider = document.querySelector(".testimoneal")
-const testi = document.querySelectorAll(".testimoneal div")
 
-let counter = 1;
-const size = testi[0].clientWidth;
 
-slider.style.transform = "translateX(" + -size * counter + "px)";
+
+]
+
+const image = document.getElementById("image");
+const name = document.getElementById("name");
+const job = document.getElementById("job");
+const info = document.getElementById("info");
+
+
+const next = document.getElementById("btnnext");
+const prev = document.getElementById("btnprev");
+
+
+let currentItem = 0 ;
+
+window.addEventListener("DOMContentLoaded" ,() => {
+    const item = Array[currentItem];
+    image.src = item.img;
+    name.textContent = item.name;
+    job.textContent = item.job;
+    info.textContent = item.text;
+
+});
+
+function slider() {
+    const item = Array[currentItem];
+    image.src = item.img;
+    name.textContent = item.name;
+    job.textContent = item.job;
+    info.textContent = item.text;
+};
+
+
+next.addEventListener("click", () => {
+
+    if ( currentItem > Array.length - 1) {
+        currentItem = 0;
+        slider();
+    }else {
+        currentItem++;
+        slider();
+    }
+    
+});
+
+
+prev.addEventListener("click", () => {
+
+    if ( currentItem < 0 ) {
+        currentItem = 3;
+        slider();
+    }else {
+        currentItem--;
+        slider();
+    }
+})
