@@ -15,4 +15,27 @@ body  {
 
 .container {
     display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 197, 197);
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    /* overflow: hidden; */
+}
+.testimoneal {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 300%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.testimoneal01 {
+    /* background-color: #131313; */
 }
