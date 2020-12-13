@@ -90,13 +90,7 @@ button {
     transition: all 0.3s ease;
 }
 
-article {
-    transition: all 1s ease-out;
-}
 
-article:hover {
-    background-color: #fff;
-}
 
 h1 {
     color: #131313;
